@@ -1,10 +1,10 @@
 <h1>barcode-scanner</h1>
 
-<barcode-scanner-livestream
-type="code_128"
-(valueChanges)="onValueChanges($event)"
-(started)="(onStarted)"
-></barcode-scanner-livestream>
+<barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)" (started)="(onStarted)">
+</barcode-scanner-livestream>
 
+<div [hidden]="!barcodeValue">
+    {{ barcodeValue }}
+</div>
 <button (click)="scanCode()">Camera</button>
 <button (click)="offCamara()">OFF Camera</button>

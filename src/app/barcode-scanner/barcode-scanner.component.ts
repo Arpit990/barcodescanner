@@ -10,20 +10,22 @@ export class BarcodeScannerComponent implements OnInit {
 
   @ViewChild(BarcodeScannerLivestreamComponent) barcodeScanner!: BarcodeScannerLivestreamComponent;
 
+  barcodeValue: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   scanCode(){
-    this.barcodeScanner.start();
-    
+    this.barcodeScanner.start(); 
   }
 
   onValueChanges(result:any){
     console.log('Test')
     console.log(result.codeResult.code)
     alert(result.codeResult.code)
+    this.barcodeValue = result.codeResult.code;
   }
 
   onStarted(started:any) {
