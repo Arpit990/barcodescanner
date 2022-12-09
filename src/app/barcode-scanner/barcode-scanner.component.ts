@@ -31,6 +31,7 @@ export class BarcodeScannerComponent implements OnInit {
   onStarted(started:any) {
     console.log('Test')
     console.log(started);
+    this.barcodeValue = started;
   }
 
   offCamara(){
