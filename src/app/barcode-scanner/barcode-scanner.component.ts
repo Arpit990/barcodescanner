@@ -24,8 +24,7 @@ export class BarcodeScannerComponent implements OnInit {
   onValueChanges(result:any){
     console.log('Test')
     console.log(result.codeResult.code)
-    alert(result.codeResult.code)
-    this.barcodeValue = result.codeResult.code;
+    this.barcodeValue = result;
   }
 
   onStarted(started:any) {
