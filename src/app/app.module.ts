@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
 // -- Barcode Scanner--//
-import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
+import { BarcodeScannerLivestreamModule, BarcodeScannerLivestreamOverlayModule } from "ngx-barcode-scanner";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
     BrowserModule,
     AppRoutingModule,
     NgxQRCodeModule,
-    BarcodeScannerLivestreamModule
+    BarcodeScannerLivestreamModule,
+    BarcodeScannerLivestreamOverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

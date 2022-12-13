@@ -1,17 +1,16 @@
-<h1>barcode-scanner</h1>
+<div class="barcode-scanner-container">
 
-<barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)" (started)="(onStarted)">
-</barcode-scanner-livestream>
+  <button type="button" (click)="startBarcodeScannerOverlay()">
+    Scan codebar with overlay window
+  </button>
 
-
-<div>
-    <h3> Value will be displayed here </h3>
-    <br/>
-    {{ barcodeValue | json }}
-    <br/>
-    <br/>
-    <br/>
-    {{ barcodeValue }}
+  <barcode-scanner-livestream-overlay
+    [type]="['code_128', 'code_39', 'ean_8']"
+    (valueChanges)="onValueChanges($event)"
+    (started)="onStarted($event)">
+  </barcode-scanner-livestream-overlay>
 </div>
-<button (click)="scanCode()">Camera</button>
-<button (click)="offCamara()">OFF Camera</button>
+
+<div class="barcode-value" [hidden]="!barcodeValue">
+  {{ barcodeValue }}
+</div>

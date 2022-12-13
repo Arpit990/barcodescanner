@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
+import { BarcodeScannerLivestreamComponent, BarcodeScannerLivestreamOverlayComponent } from "ngx-barcode-scanner";
 
 @Component({
   selector: 'app-barcode-scanner',
@@ -9,6 +9,7 @@ import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
 export class BarcodeScannerComponent implements OnInit {
 
   @ViewChild(BarcodeScannerLivestreamComponent) barcodeScanner!: BarcodeScannerLivestreamComponent;
+  @ViewChild(BarcodeScannerLivestreamOverlayComponent) barcodeScannerOverlay!: BarcodeScannerLivestreamOverlayComponent;
 
   barcodeValue: any;
 
@@ -17,20 +18,20 @@ export class BarcodeScannerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  startBarcodeScannerOverlay(): void {
+    this.barcodeScannerOverlay.show();
+  }
+
+  onValueChanges(result: any): void {
+    this.barcodeValue = result.codeResult.code;
+  }
+
+  onStarted(event: any): void {
+    console.log('started', event);
+  }
+
   scanCode(){
     this.barcodeScanner.start(); 
-  }
-
-  onValueChanges(result:any){
-    console.log('Test')
-    console.log(result.codeResult.code)
-    this.barcodeValue = result;
-  }
-
-  onStarted(started:any) {
-    console.log('Test')
-    console.log(started);
-    this.barcodeValue = started;
   }
 
   offCamara(){
