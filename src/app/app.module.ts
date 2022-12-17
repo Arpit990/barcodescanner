@@ -10,6 +10,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
 // -- Barcode Scanner--//
 import { BarcodeScannerLivestreamModule, BarcodeScannerLivestreamOverlayModule } from "ngx-barcode-scanner";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BarcodeScannerLivestreamModule, BarcodeScannerLivestreamOverlayModule }
     AppRoutingModule,
     NgxQRCodeModule,
     BarcodeScannerLivestreamModule,
-    BarcodeScannerLivestreamOverlayModule
+    BarcodeScannerLivestreamOverlayModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,2 @@
-<H1>Qr Code</H1>
-<button routerLink="/scan-code">
-Scan Barcode
-</button>
-
-
-<ngx-qrcode 
-  [elementType]="elementType" 
-  [value]="value"
-  [errorCorrectionLevel]="error">
-  cssClass="aclass"
-</ngx-qrcode>
-
-
+<app-barcode-scanner></app-barcode-scanner>
 <router-outlet></router-outlet>

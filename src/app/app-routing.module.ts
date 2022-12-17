@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
 
-const routes: Routes = [
-  { path:'scan-code', component:BarcodeScannerComponent }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
