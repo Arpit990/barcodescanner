@@ -12,6 +12,7 @@ export class BarcodeScannerComponent implements OnInit {
   @ViewChild(BarcodeScannerLivestreamOverlayComponent) barcodeScannerOverlay!: BarcodeScannerLivestreamOverlayComponent;
 
   barcodeValue: any;
+  data: any;
 
   constructor(private barcodeService: BarcodeService) { }
 
@@ -28,7 +29,6 @@ export class BarcodeScannerComponent implements OnInit {
       if(!result.error) {
         window.location.href='https://www.google.com/';
       }
-      console.log(result);
     })
   }
 

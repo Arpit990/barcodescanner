@@ -1,11 +1,12 @@
-<div class="barcode-scanner-container">
-  <button type="button" (click)="startBarcodeScannerOverlay()">
-    Scan codebar with overlay window
+<div class="barcode-scanner-container mt-5">
+
+  <button type="button" class="btn btn-light mt-5" (click)="startBarcodeScannerOverlay()">
+    <i class="fa-solid fa-barcode"></i>
+    Scan Barcode
   </button>
 
-  <barcode-scanner-livestream-overlay
-    [type]="['code_128', 'code_39', 'ean_8']"
-    (valueChanges)="onValueChanges($event)"
+
+  <barcode-scanner-livestream-overlay [type]="['code_128', 'code_39', 'ean_8']" (valueChanges)="onValueChanges($event)"
     (started)="onStarted($event)">
   </barcode-scanner-livestream-overlay>
 </div>
