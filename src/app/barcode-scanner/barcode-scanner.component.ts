@@ -27,7 +27,7 @@ export class BarcodeScannerComponent implements OnInit {
     this.barcodeValue = result.codeResult.code;
     this.barcodeService.getRedirectURL(result.codeResult.code).subscribe(result => {
       if(!result.error) {
-        window.location.href='https://www.google.com/';
+        window.location.href='http://tonysbarsupply.shop/' + result.data.product_url;
       }
     })
   }
